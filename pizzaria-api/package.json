@@ -1,0 +1,19 @@
+{
+  "name": "pizzaria-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index-sqlite.js",
+  "scripts": {
+    "start": "node index-sqlite.js",
+    "dev": "node index-sqlite.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}
