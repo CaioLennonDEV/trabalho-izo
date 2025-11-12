@@ -2,6 +2,8 @@
 
 API REST completa para gerenciamento de pizzaria desenvolvida com Node.js, Express e PostgreSQL.
 
+🚀 **Deploy Ativo**: https://trabalho-izo.onrender.com
+
 ## Funcionalidades
 
 - ✅ Gerenciamento de pizzas (CRUD)
@@ -10,6 +12,7 @@ API REST completa para gerenciamento de pizzaria desenvolvida com Node.js, Expre
 - ✅ Controle de status dos pedidos
 - ✅ Interface web para testes
 - ✅ Banco PostgreSQL com relacionamentos
+- ✅ Deploy automático no Render
 
 ## Estrutura do Projeto
 
@@ -25,7 +28,13 @@ pizzaria-api/
 └─ README.md          # Documentação
 ```
 
-## Instalação
+## Acesso Rápido
+
+### 🌐 Aplicação Online
+- **URL Principal**: https://trabalho-izo.onrender.com
+- **Interface Web**: Acesse a URL acima para usar o sistema completo
+
+### 🔧 Desenvolvimento Local
 
 1. Clone o repositório
 2. Instale as dependências:
@@ -36,24 +45,22 @@ npm install
 3. Configure o arquivo `.env` com suas credenciais do PostgreSQL:
 ```env
 DATABASE_URL=postgresql://usuario:senha@host:porta/database
-PORT=3000
+PORT=10000
 ```
 
-## Execução
-
+4. Execute localmente:
 ```bash
 npm start
 ```
 
-A API estará disponível em `http://localhost:3000`
-
 ## Interface Web
 
-Acesse `http://localhost:3000` para usar a interface web completa que permite:
-- Cadastrar e gerenciar pizzas
-- Cadastrar clientes
-- Fazer pedidos
-- Acompanhar status dos pedidos
+A interface web completa permite:
+- 🍕 Cadastrar e gerenciar pizzas
+- 👥 Cadastrar clientes
+- 📋 Fazer pedidos com múltiplos itens
+- 📊 Acompanhar status dos pedidos em tempo real
+- 💰 Calcular totais automaticamente
 
 ## Rotas da API
 
@@ -84,9 +91,20 @@ O sistema cria automaticamente as seguintes tabelas:
 
 ## Deploy no Render
 
-1. Suba o código para o GitHub
-2. Conecte o repositório no Render
-3. Configure:
-   - Build Command: `npm install`
-   - Start Command: `node index.js`
-   - Environment Variable: `DATABASE_URL`
+✅ **Status**: Aplicação já deployada e funcionando!
+
+### Configuração Atual
+- **URL**: https://trabalho-izo.onrender.com
+- **Build Command**: `npm install`
+- **Start Command**: `npm start`
+- **Porta**: 10000 (configurada automaticamente pelo Render)
+- **Banco**: PostgreSQL hospedado no Render
+
+### Para Novos Deploys
+1. Faça push das alterações para o repositório GitHub
+2. O Render fará o redeploy automaticamente
+3. Aguarde alguns minutos para a aplicação ficar online
+
+### Variáveis de Ambiente Configuradas
+- `DATABASE_URL`: Conexão com PostgreSQL do Render
+- `PORT`: Porta definida automaticamente pelo Render
