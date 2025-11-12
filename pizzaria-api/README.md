@@ -1,16 +1,28 @@
 # Pizzaria API
 
-API REST para gerenciamento de pizzaria desenvolvida com Node.js, Express e PostgreSQL.
+API REST completa para gerenciamento de pizzaria desenvolvida com Node.js, Express e PostgreSQL.
+
+## Funcionalidades
+
+- ✅ Gerenciamento de pizzas (CRUD)
+- ✅ Cadastro de usuários/clientes
+- ✅ Sistema de pedidos com múltiplos itens
+- ✅ Controle de status dos pedidos
+- ✅ Interface web para testes
+- ✅ Banco PostgreSQL com relacionamentos
 
 ## Estrutura do Projeto
 
 ```
 pizzaria-api/
 │
-├─ db.js
-├─ index.js
-├─ package.json
-└─ README.md
+├─ db.js              # Configuração do banco PostgreSQL
+├─ index.js           # Servidor principal com todas as rotas
+├─ .env               # Variáveis de ambiente
+├─ package.json       # Dependências do projeto
+├─ public/
+│  └─ index.html      # Interface web para testes
+└─ README.md          # Documentação
 ```
 
 ## Instalação
@@ -21,20 +33,11 @@ pizzaria-api/
 npm install
 ```
 
-## Configuração do Banco de Dados
-
-### Criar tabela no PostgreSQL:
-```sql
-CREATE TABLE pizzas (
-  id SERIAL PRIMARY KEY,
-  nome VARCHAR(100),
-  tamanho VARCHAR(20),
-  preco DECIMAL(10,2)
-);
+3. Configure o arquivo `.env` com suas credenciais do PostgreSQL:
+```env
+DATABASE_URL=postgresql://usuario:senha@host:porta/database
+PORT=3000
 ```
-
-### Variável de Ambiente
-Configure a variável `DATABASE_URL` com a connection string do seu banco PostgreSQL.
 
 ## Execução
 
@@ -42,12 +45,42 @@ Configure a variável `DATABASE_URL` com a connection string do seu banco Postgr
 npm start
 ```
 
+A API estará disponível em `http://localhost:3000`
+
+## Interface Web
+
+Acesse `http://localhost:3000` para usar a interface web completa que permite:
+- Cadastrar e gerenciar pizzas
+- Cadastrar clientes
+- Fazer pedidos
+- Acompanhar status dos pedidos
+
 ## Rotas da API
 
-- `GET /` - Teste da API
+### Pizzas
 - `GET /pizzas` - Listar todas as pizzas
 - `POST /pizzas` - Criar nova pizza
-- `DELETE /pizzas/:id` - Deletar pizza por ID
+- `DELETE /pizzas/:id` - Deletar pizza
+
+### Usuários
+- `GET /usuarios` - Listar usuários
+- `POST /usuarios` - Cadastrar usuário
+- `GET /usuarios/email/:email` - Buscar por email
+- `GET /usuarios/:id/pedidos` - Pedidos de um usuário
+
+### Pedidos
+- `GET /pedidos` - Listar todos os pedidos
+- `POST /pedidos` - Criar novo pedido
+- `GET /pedidos/:id` - Detalhes do pedido
+- `PUT /pedidos/:id/status` - Atualizar status
+
+## Estrutura do Banco
+
+O sistema cria automaticamente as seguintes tabelas:
+- `pizzas` - Cardápio de pizzas
+- `usuarios` - Clientes cadastrados
+- `pedidos` - Pedidos realizados
+- `pedido_itens` - Itens de cada pedido
 
 ## Deploy no Render
 
